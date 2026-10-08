@@ -1,0 +1,46 @@
+Green Haven Dog Rescue Website
+A responsive multi-page web application built for Green Haven Dog Rescue, a Non-Profit Organisation (NPO) dedicated to rescuing, rehabilitating, and rehoming domestic animals across the Western Cape, South Africa.
+
+Project Features
+Responsive Layout: Mobile-friendly design using CSS Grid, Flexbox, and media queries.
+
+Hero Banner: Custom hero section with background overlays and quick-action Call-To-Action (CTA) buttons.
+
+Core Pillars Grid: Visual showcase highlighting Rescue & Rehabilitation, Spay & Neuter Clinics, and Community Awareness.
+
+Comprehensive Navigation & Footer: Accessible header navigation paired with a multi-column footer containing quick links, contact information, legal disclosures, and social media links.
+
+Floating Quick-Action Buttons: Fixed-position quick-access buttons for direct WhatsApp messaging, emergency phone calls, and adoption enquiries.
+
+Repository Structure
+Plaintext
+.
+├── CSS/
+│   └── style.css            # Main stylesheet for global layout and components
+├── Images/
+│   ├── Home Screen.webp     # Hero banner background image
+│   └── logo.png             # Site header brand logo
+├── Pages/
+│   ├── about.html           # Information regarding mission, vision, and team
+│   ├── contactus.html       # Contact form, location maps, and operating hours
+│   ├── enquiry.html         # Adoption, fostering, and volunteer enquiry forms
+│   └── services.html        # Detailed breakdown of rescue and community programs
+└── index.html               # Homepage entry point
+Tech Stack
+HTML5: Semantic structural layout and ARIA accessibility labels.
+
+CSS3: Custom CSS variables (:root), Flexbox, CSS Grid layouts, and custom media queries.
+
+Getting Started
+Clone or download the repository:
+
+Bash
+git clone https://github.com/your-username/green-haven-dog-rescue.git
+Navigate to the project folder:
+
+Bash
+cd green-haven-dog-rescue
+Open index.html in your web browser of choice, or run it using a local development server (such as Visual Studio Code's Live Server extension).
+References
+html5
+W3schools

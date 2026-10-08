@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Green Haven Dog Rescue</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        /* Modern Color Scheme & Scoped Homepage Styling */
+        :root {
+            --primary-green: #2d6a4f;
+            --primary-light: #52b788;
+            --accent-gold: #e9c46a;
+            --dark-text: #1b4332;
+            --light-bg: #f8f9fa;
+            --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            background-color: #fafafa;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .home-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Banner Section */
+        .hero-banner {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 30px auto 50px auto;
+            box-shadow: var(--card-shadow);
+            color: #ffffff;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(27, 67, 50, 0.75), rgba(45, 106, 79, 0.85)), 
+                        url('./Images/Home Screen.webp') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 750px;
+            padding: 40px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--dark-text);
+        }
+
+        .btn-primary:hover {
+            background-color: #f4a261;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #ffffff;
+            color: var(--primary-green);
+            transform: translateY(-2px);
+        }
+
+        /* Value Proposition Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 30px 20px;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            border-top: 5px solid var(--primary-green);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark-text);
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Callout Section */
+        .callout-banner {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+            border-left: 6px solid var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .callout-text h2 {
+            font-size: 1.6rem;
+            color: var(--dark-text);
+            margin-bottom: 8px;
+        }
+
+        .callout-text p {
+            color: #555;
+            margin: 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .callout-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                Green Haven Dog Rescue
+                <img src="./Images/logo.png" alt="Green Haven Logo" class="nav-logo">
+            </a>
+            
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="./Pages/about.html">About</a>
+                <a href="./Pages/services.html">Services</a>
+                <a href="./Pages/enquiry.html">Enquiry</a>
+                <a href="./Pages/contactus.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="home-container">
+        
+        <!-- Hero Section -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>Green Haven Dog Rescue</h1>
+                <p>Dedicated to increasing community awareness, rescuing abandoned domestic animals, and providing sustainable welfare solutions across the Western Cape.</p>
+                <div class="hero-buttons">
+                    <a href="./Pages/enquiry.html" class="btn-primary">Adopt a Rescue</a>
+                    <a href="./Pages/about.html" class="btn-secondary">Learn Our Story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Pillar Highlights -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🐶</span>
+                <h3>Rescue & Rehabilitation</h3>
+                <p>Providing safe shelter, medical treatment, and loving rehab care for abused and abandoned animals.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🏥</span>
+                <h3>Spay & Neuter Clinics</h3>
+                <p>Humanely reducing pet overpopulation through targeted community veterinary outreach programs.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🤝</span>
+                <h3>Community Awareness</h3>
+                <p>Educating local communities on responsible pet ownership, welfare standards, and humane care.</p>
+            </div>
+        </section>
+
+        <!-- Callout Banner -->
+        <section class="callout-banner">
+            <div class="callout-text">
+                <h2>Want to Make a Difference?</h2>
+                <p>Join our volunteer network, foster a dog in need, or submit an adoption enquiry today.</p>
+            </div>
+            <a href="./Pages/enquiry.html" class="btn-primary">Get Involved</a>
+        </section>
+
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <!-- Brand Info -->
+            <div class="footer-logo-col">
+                <h3 class="brand-title">GREEN HAVEN</h3>
+                <p class="brand-subtitle">DOG RESCUE NPO</p>
+                <p class="npo-reg-text">Reg No: 2018/123456/08</p>
+                <p class="pbo-reg-text">PBO Ref: 930012345</p>
+            </div>
+
+            <!-- Column 1: Programs -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Our Programs</h4>
+                <ul class="footer-links">
+                    <li><a href="./Pages/services.html">Rescue & Shelter Operations</a></li>
+                    <li><a href="./Pages/services.html">Veterinary Care & Rehab</a></li>
+                    <li><a href="./Pages/services.html">Spay & Neuter Clinics</a></li>
+                    <li><a href="./Pages/services.html">Community Education</a></li>
+                    <li><a href="./Pages/services.html">Emergency Food Pantry</a></li>
+                    <li><a href="./Pages/services.html">Youth Internships</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Get Involved -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Get Involved</h4>
+                <ul class="footer-links">
+                    <li><a href="./Pages/enquiry.html">Adopt a Dog</a></li>
+                    <li><a href="./Pages/enquiry.html">Become a Foster Parent</a></li>
+                    <li><a href="./Pages/enquiry.html">Volunteer Application</a></li>
+                    <li><a href="./Pages/enquiry.html">Monthly Financial Donation</a></li>
+                    <li><a href="./Pages/about.html">Financial Transparency</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Quick Links -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./Pages/about.html">About Green Haven</a></li>
+                    <li><a href="./Pages/about.html">Mission & Vision</a></li>
+                    <li><a href="./Pages/services.html">Our Impact Stories</a></li>
+                    <li><a href="./Pages/contactus.html">Shelter Location</a></li>
+                    <li><a href="./Pages/contactus.html">Operating Hours</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Talk To Us -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Talk To Us</h4>
+                <ul class="footer-links">
+                    <li><a href="./Pages/contactus.html">Emergency Rescue Line</a></li>
+                    <li><a href="./Pages/contactus.html">General Enquiries</a></li>
+                </ul>
+                <div class="contact-details">
+                    <p><strong>Tel:</strong> <a href="tel:0215550199">021 555 0199</a></p>
+                    <p><strong>Whatsapp:</strong> <a href="https://wa.me/27821234567">082 123 4567</a></p>
+                    <p><a href="mailto:info@greenhavendogrescue.org" class="highlight-link">info@greenhavendogrescue.org</a></p>
+                </div>
+                <div class="social-icons">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Instagram">📷</a>
+                    <a href="#" title="X">X</a>
+                    <a href="#" title="TikTok">🎵</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="YouTube">▶</a>
+                    <a href="#" title="WhatsApp">💬</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disclaimers -->
+        <div class="footer-middle">
+            <div class="disclaimer-col">
+                <p>Green Haven Dog Rescue is a registered Non-Profit Organisation (NPO 2018/123456/08) operating across Cape Town and the Western Cape. Dedicated to rescuing, rehabilitating, and rehoming vulnerable, abandoned, and neglected animals since 2018.</p>
+            </div>
+            <div class="disclaimer-col">
+                <p>Official NPO documentation and audited financial disclosures are published in accordance with South African welfare standards. Section 18A tax-deductible donation receipts are available upon request via <a href="mailto:donations@greenhavendogrescue.org" class="accent-link">donations@greenhavendogrescue.org</a>.</p>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <span class="copyright">&copy; 2026 Green Haven Dog Rescue.</span>
+            <div class="legal-menu">
+                <a href="#">Adoption Terms</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">PAIA Manual</a>
+                <a href="#">Website Terms of Use</a>
+            </div>
+        </div>
+
+        <!-- Floating Buttons -->
+        <div class="floating-buttons">
+            <a href="https://wa.me/27821234567" class="float-btn whatsapp" title="WhatsApp Us">💬</a>
+            <a href="tel:0215550199" class="float-btn phone" title="Call Emergency Line">📞</a>
+            <a href="./Pages/enquiry.html" class="float-btn enquiry" title="Submit Adoption Enquiry">📋</a>
+        </div>
+    </footer>
+
+</body>
+</html>

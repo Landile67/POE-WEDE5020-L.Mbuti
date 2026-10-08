@@ -402,3 +402,44 @@ logo
   width: auto;
   object-fit: contain;
 }
+ 
+/* ========================================================
+   FORM VALIDATION STYLES (PURE CSS)
+   ======================================================== */
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+/* Hide error text by default */
+.error-message {
+    display: none;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+/* Red border & soft pink background when input is invalid AFTER user types */
+.contact-form input:user-invalid,
+.contact-form textarea:user-invalid,
+.contact-form select:user-invalid {
+    border: 2px solid #e74c3c !important;
+    background-color: #fdf2f2;
+}
+
+/* Green border & soft green background when input meets valid criteria */
+.contact-form input:user-valid,
+.contact-form textarea:user-valid,
+.contact-form select:user-valid {
+    border: 2px solid #2ecc71 !important;
+    background-color: #f2fbf5;
+}
+
+/* Unhide the error message below invalid inputs */
+.contact-form input:user-invalid ~ .error-message,
+.contact-form textarea:user-invalid ~ .error-message,
+.contact-form select:user-invalid ~ .error-message {
+    display: block;
+}

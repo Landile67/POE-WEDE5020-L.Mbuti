@@ -1,153 +1,176 @@
-/**
- * validation.js - Custom Client-Side Form Validation
- *
- * This file is used only on contact.html.
- *
- * It demonstrates:
- * 1. Variables
- * 2. Functions
- * 3. Conditions
- * 4. Regular expressions
- * 5. Events
- * 6. classList
- * 7. Form validation
- */
+document.addEventListener("DOMContentLoaded", () => {
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form) => {
+        form.addEventListener("submit", (e) => {
+            let isValid = true;
+
+            // Validate Name/First Name / Last Name fields
+            const nameInputs = form.querySelectorAll('input[id*="name"], input[name="firstname"], input[name="lastname"], input[id="name"]');
+            nameInputs.forEach((input) => {
+                if (input.value.trim().length < 2) {
+                    isValid = false;
+                    showError(input, "Must be at least 2 characters long.");
+                } else {
+                    clearError(input);
+                }
+            });
+
+            // Validate Email
+            const emailInput = form.querySelector('input[type="email"]');
+            if (emailInput) {
+                const emailRegex = /^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/i;
+                if (!emailRegex.test(emailInput.value.trim())) {
+                    isValid = false;
+                    showError(emailInput, "Please enter a valid email address.");
+                } else {
+                    clearError(emailInput);
+                }
+            }
+
+            // Validate Phone Number
+            const phoneInput = form.querySelector('input[type="tel"]');
+            if (phoneInput) {
+                const phoneRegex = /^[+]?[\d\s\-()]{10,15}$/;
+                if (!phoneRegex.test(phoneInput.value.trim())) {
+                    isValid = false;
+                    showError(phoneInput, "Please enter a valid phone number.");
+                } else {
+                    clearError(phoneInput);
+                }
+            }
+
+            // Validate Textareas (Message)
+            const textarea = form.querySelector("textarea");
+            if (textarea && textarea.hasAttribute("required") || textarea.value.trim().length > 0) {
+                if (textarea.value.trim().length < 10) {
+                    isValid = false;
+                    showError(textarea, "Message must be at least 10 characters long.");
+                } else {
+                    clearError(textarea);
+                }
+            }
+
+            // Prevent submission if validation fails
+            if (!isValid) {
+                e.preventDefault();
+            }
+        });
+    });
+
+    function showError(inputElement, message) {
+        inputElement.style.borderColor = "#e74c3c";
+        let errorSpan = inputElement.parentElement.querySelector(".error-message");
+        if (!errorSpan) {
+            errorSpan = document.createElement("span");
+            errorSpan.classList.add("error-message");
+            errorSpan.style.cssText = "color: #e74c3c; font-size: 0.85rem; margin-top: 4px; display: block;";
+            inputElement.parentElement.appendChild(errorSpan);
+        }
+        errorSpan.textContent = message;
+    }
+
+    function clearError(inputElement) {
+        inputElement.style.borderColor = "#2ecc71";
+        const errorSpan = inputElement.parentElement.querySelector(".error-message");
+        if (errorSpan) {
+            errorSpan.textContent = "";
+        }
+    }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Target the enquiry form specifically
+    const enquiryForm = document.querySelector(".enquiry-form");
+    if (!enquiryForm) return;
 
-  // Find the contact form.
-  const form = document.getElementById("contactForm");
+    enquiryForm.addEventListener("submit", (e) => {
+        let isValid = true;
 
-  // Stop if this is not the contact page.
-  if (!form) return;
+        // 1. Validate Full Name (at least 3 characters)
+        const nameInput = enquiryForm.querySelector("#name");
+        if (nameInput) {
+            const nameVal = nameInput.value.trim();
+            if (nameVal.length < 3) {
+                isValid = false;
+                showError(nameInput, "Full name must be at least 3 characters long.");
+            } else {
+                clearError(nameInput);
+            }
+        }
 
+        // 2. Validate Email Address using standard pattern
+        const emailInput = enquiryForm.querySelector("#email");
+        if (emailInput) {
+            const emailRegex = /^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/i;
+            if (!emailRegex.test(emailInput.value.trim())) {
+                isValid = false;
+                showError(emailInput, "Please enter a valid email address.");
+            } else {
+                clearError(emailInput);
+            }
+        }
 
-  /* ---------- EMAIL PATTERN ---------- */
+        // 3. Validate Phone Number (10 to 15 digits/chars, optional leading +)
+        const phoneInput = enquiryForm.querySelector("#phone");
+        if (phoneInput) {
+            const phoneRegex = /^[+]?[\d\s\-()]{10,15}$/;
+            if (!phoneRegex.test(phoneInput.value.trim())) {
+                isValid = false;
+                showError(phoneInput, "Please enter a valid phone number (at least 10 digits).");
+            } else {
+                clearError(phoneInput);
+            }
+        }
 
-  // This pattern checks for a basic structure such as:
-  // student@example.com
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        // 4. Validate Service Selection
+        const serviceSelect = enquiryForm.querySelector("#service");
+        if (serviceSelect) {
+            if (serviceSelect.value === "") {
+                isValid = false;
+                showError(serviceSelect, "Please select an available service.");
+            } else {
+                clearError(serviceSelect);
+            }
+        }
 
+        // 5. Validate Message (at least 10 characters if provided, or required)
+        const messageTextarea = enquiryForm.querySelector("#message");
+        if (messageTextarea) {
+            const msgVal = messageTextarea.value.trim();
+            if (msgVal.length > 0 && msgVal.length < 10) {
+                isValid = false;
+                showError(messageTextarea, "Message must be at least 10 characters long.");
+            } else {
+                clearError(messageTextarea);
+            }
+        }
 
-  /* ---------- FORM SUBMISSION EVENT ---------- */
-
-  form.addEventListener("submit", (event) => {
-
-    // Stop the browser from refreshing/submitting the page.
-    event.preventDefault();
-
-    // Assume the form is valid until an error is found.
-    let isValid = true;
-
-
-    /* ---------- FIND FORM ELEMENTS ---------- */
-
-    const fullName =
-      document.getElementById("fullName");
-
-    const email =
-      document.getElementById("email");
-
-    const service =
-      document.getElementById("serviceSelect");
-
-    const message =
-      document.getElementById("message");
-
-    const formStatus =
-      document.getElementById("formStatus");
-
-
-    /* ---------- RESET OLD ERRORS ---------- */
-
-    formStatus.classList.remove("success");
-
-    resetErrors([
-      fullName,
-      email,
-      service,
-      message
-    ]);
-
-
-    /* ---------- VALIDATE FULL NAME ---------- */
-
-    if (fullName.value.trim().length < 3) {
-      showError(fullName, "nameError");
-      isValid = false;
-    }
-
-
-    /* ---------- VALIDATE EMAIL ---------- */
-
-    if (!emailRegex.test(email.value.trim())) {
-      showError(email, "emailError");
-      isValid = false;
-    }
-
-
-    /* ---------- VALIDATE SERVICE ---------- */
-
-    if (service.value === "") {
-      showError(service, "serviceError");
-      isValid = false;
-    }
-
-
-    /* ---------- VALIDATE MESSAGE ---------- */
-
-    if (message.value.trim().length < 10) {
-      showError(message, "messageError");
-      isValid = false;
-    }
-
-
-    /* ---------- SUCCESS ---------- */
-
-    if (isValid) {
-      formStatus.classList.add("success");
-
-      // Clear all entered values after successful validation.
-      form.reset();
-    }
-  });
-
-
-  /* ========================================================
-     FUNCTION: showError
-     Adds the error class to an input and displays its message.
-     ======================================================== */
-
-  function showError(inputElement, errorSpanId) {
-
-    inputElement.classList.add("error");
-
-    const errorSpan =
-      document.getElementById(errorSpanId);
-
-    if (errorSpan) {
-      errorSpan.classList.add("visible");
-    }
-  }
-
-
-  /* ========================================================
-     FUNCTION: resetErrors
-     Removes all old error styles/messages before validation.
-     ======================================================== */
-
-  function resetErrors(elements) {
-
-    elements.forEach((element) => {
-      element.classList.remove("error");
+        // Prevent form submission if any validation check fails
+        if (!isValid) {
+            e.preventDefault();
+        }
     });
 
-    const errorSpans =
-      document.querySelectorAll(".error-message");
+    // Helper function to display error messages dynamically below fields
+    function showError(inputElement, message) {
+        inputElement.style.borderColor = "#e74c3c";
+        let errorSpan = inputElement.parentElement.querySelector(".error-message");
+        if (!errorSpan) {
+            errorSpan = document.createElement("span");
+            errorSpan.classList.add("error-message");
+            errorSpan.style.cssText = "color: #e74c3c; font-size: 0.85rem; margin-top: 5px; display: block;";
+            inputElement.parentElement.appendChild(errorSpan);
+        }
+        errorSpan.textContent = message;
+    }
 
-    errorSpans.forEach((span) => {
-      span.classList.remove("visible");
-    });
-  }
-
+    // Helper function to clear error messages
+    function clearError(inputElement) {
+        inputElement.style.borderColor = "#2ecc71";
+        const errorSpan = inputElement.parentElement.querySelector(".error-message");
+        if (errorSpan) {
+            errorSpan.textContent = "";
+        }
+    }
 });

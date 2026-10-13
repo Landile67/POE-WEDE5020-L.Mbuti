@@ -443,3 +443,532 @@ logo
 .contact-form select:user-invalid ~ .error-message {
     display: block;
 }
+
+/* About Page Styling Rules */
+
+.about-container .page-header {
+    background: linear-gradient(135deg, rgba(44, 94, 59, 0.92), rgba(76, 175, 80, 0.88)), url('../Images/aboutus pic.jpg') center/cover no-repeat;
+    color: #ffffff;
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 50px;
+}
+
+.about-container .page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+}
+
+.about-container .page-header p {
+    font-size: 1.15rem;
+    max-width: 680px;
+    margin: 0 auto;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.about-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+}
+
+.about-image-card {
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.about-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 360px;
+    transition: transform 0.4s ease;
+}
+
+.about-image-card:hover img {
+    transform: scale(1.03);
+}
+
+.about-hero-text {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #4caf50;
+}
+
+.about-hero-text h2 {
+    color: #2c5e3b;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-hero-text p {
+    color: #444;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.history-secondary-text {
+    margin-top: 12px;
+}
+
+.stats-bar {
+    background: #2c5e3b;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 35px 20px;
+    border-radius: 16px;
+    max-width: 1150px;
+    margin: 0 auto 50px auto;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 10px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: #a8e6cf;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.info-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #4caf50;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card h2 {
+    color: #2c5e3b;
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    color: #444;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+    .about-hero-grid, 
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Home Page Image & Feature Card Enhancements */
+
+.hero-banner {
+    background: linear-gradient(135deg, rgba(44, 94, 59, 0.9), rgba(76, 175, 80, 0.85)), url('./Images/aboutus pic.jpg') center/cover no-repeat;
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 0 0 25px 25px;
+    margin-bottom: 50px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 750px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.feature-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card .service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.feature-card .service-image:hover {
+    transform: scale(1.03);
+}
+
+.feature-card-content {
+    padding: 25px;
+}
+
+.feature-card h3 {
+    color: #2c5e3b;
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+.feature-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.callout-banner {
+    background: #2c5e3b;
+    color: #ffffff;
+    padding: 50px 30px;
+    border-radius: 20px;
+    max-width: 1150px;
+    margin: 0 auto 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.callout-text h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #a8e6cf;
+}
+
+/* Enquiry Page Styling Rules */
+
+.enquiry-container .page-header {
+    background: linear-gradient(135deg, rgba(44, 94, 59, 0.92), rgba(76, 175, 80, 0.88)), url('../Images/Inq.jpg') center/cover no-repeat;
+    color: #ffffff;
+    padding: 70px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 40px;
+}
+
+.enquiry-container .page-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.enquiry-container .page-header h2:nth-child(2) {
+    font-size: 1.15rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
+
+.enquiry-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.enquiry-image {
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.enquiry-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 480px;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+}
+
+.enquiry-image img:hover {
+    transform: scale(1.03);
+}
+
+.enquiry-container .form-section {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #4caf50;
+}
+
+.enquiry-form .form-group {
+    margin-bottom: 20px;
+}
+
+.enquiry-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c5e3b;
+    font-weight: 600;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.enquiry-form button[type="submit"] {
+    background-color: #2c5e3b;
+    color: #ffffff;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.enquiry-form button[type="submit"]:hover {
+    background-color: #234b30;
+    transform: translateY(-2px);
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 900px) {
+    .enquiry-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Contact Us Page Styling Rules */
+
+.contact-container .page-header {
+    background: linear-gradient(135deg, rgba(44, 94, 59, 0.92), rgba(76, 175, 80, 0.88)), url('../Images/aboutus pic.jpg') center/cover no-repeat;
+    color: #ffffff;
+    padding: 70px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 40px;
+}
+
+.contact-container .page-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.contact-container .page-header p {
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+    align-items: start;
+}
+
+.contact-info-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #2c5e3b;
+}
+
+.contact-info-card h2 {
+    color: #2c5e3b;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    color: #444;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-container .form-section {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #4caf50;
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #2c5e3b;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
+}
+
+.contact-form .btn-submit {
+    background-color: #2c5e3b;
+    color: #ffffff;
+    border: none;
+    padding: 14px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form .btn-submit:hover {
+    background-color: #234b30;
+    transform: translateY(-2px);
+}
+
+.map-section {
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.map-section h2 {
+    color: #2c5e3b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.map-wrapper {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    height: 400px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Layout Adjustments */
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+}
